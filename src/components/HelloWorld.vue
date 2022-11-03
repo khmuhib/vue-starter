@@ -1,29 +1,31 @@
 <template>
-  <h1>{{ msg }}</h1>
+  <h1>Name: {{ msg }}</h1>
+  <h1>Age: {{ age }}</h1>
 
-  <p>
-    <a href="https://vitejs.dev/guide/features.html" target="_blank">
-      Vite Documentation
-    </a>
-    |
-    <a href="https://v3.vuejs.org/" target="_blank">Vue 3 Documentation</a>
-  </p>
+  <div class="">
+    <h1>This Hello Component</h1>
+    <ul>
+      <li v-for="value in myObject" :key="value.id">
+        {{ value.title }}
+      </li>
+    </ul>
+  </div>
 
-  <button type="button" @click="state.count++">count is: {{ state.count }}</button>
-  <p>
-    Edit
-    <code>components/HelloWorld.vue</code> to test hot module replacement.
-  </p>
+
 </template>
 
-<script setup>
-import { defineProps, reactive } from 'vue'
+<script>
+export default {
+  data() {
+    return {
+    }
+  },
 
-defineProps({
-  msg: String
-})
+  props: ['msg', 'age']
 
-const state = reactive({ count: 0 })
+
+}
+
 </script>
 
 <style scoped>
