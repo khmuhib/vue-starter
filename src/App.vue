@@ -1,22 +1,42 @@
 <template>
-  <img alt="Vue logo" src="./assets/logo.png" />
-  <HelloWorld msg="Hello Vue 3 + Vite" />
+  <HelloWorld msg="This is Hello Component sda" />
+  <ul>
+    <li v-for="value in myObject" :key="value.id">
+      {{ value.title }}
+    </li>
+  </ul>
 </template>
 
-<script setup>
+<script>
 import HelloWorld from './components/HelloWorld.vue'
 
-// This starter template is using Vue 3 experimental <script setup> SFCs
-// Check out https://github.com/vuejs/rfcs/blob/script-setup-2/active-rfcs/0000-script-setup.md
+export default {
+
+  components: { HelloWorld },
+  data() {
+    return {
+      myObject: [
+        {
+          id: 1,
+          title: 'How to do lists in Vue',
+          author: 'Jane Doe',
+          publishedAt: '2016-04-10'
+        },
+        {
+          id: 2,
+          title: 'dasdas',
+          author: 'dsadas',
+          publishedAt: 'dsadsad'
+        },
+      ]
+    }
+  }
+
+}
+
+
 </script>
 
 <style>
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
-}
+
 </style>
