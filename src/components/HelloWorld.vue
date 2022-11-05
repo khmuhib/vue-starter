@@ -3,7 +3,8 @@
   <h1>Age: {{ age }}</h1>
 
   <div class="">
-    <h1>This Hello Component</h1>
+    <h1>This Hello World Component</h1>
+    <h3 id="test">test</h3>
     <ul>
       <li v-for="value in myObject" :key="value.id">
         {{ value.title }}
@@ -25,6 +26,8 @@ export default {
 
 
 }
+
+document.getElementById("test").innerHTML = "Hello";
 
 </script>
 
